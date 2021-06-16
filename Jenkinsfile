@@ -1,5 +1,5 @@
 node('master') {
-    stage('Git-Checkout'){
+    stage('Checkout From Git'){
         git 'https://github.com/Jegapriya/EmpDeptSpring.git'
     }
     
