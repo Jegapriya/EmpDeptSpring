@@ -5,7 +5,7 @@ version: '2'
 
 
 services: 
-  petclinic: 
+  EmpDept: 
     build: .
     ports:
       - '30099:8080'
