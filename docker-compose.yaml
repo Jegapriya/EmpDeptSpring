@@ -8,4 +8,4 @@ services:
   empdept: 
     build: .
     ports:
-      - '301009:8080'
+      - '30100:8080'
