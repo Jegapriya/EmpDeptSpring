@@ -5,7 +5,7 @@ version: '2'
 
 
 services: 
-  EmpDept: 
+  empdept: 
     build: .
     ports:
       - '301009:8080'
