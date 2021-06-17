@@ -23,6 +23,12 @@ node('master') {
     stage('package'){
         sh 'mvn package'
     }
+
+    stage('Sonarqube'){
+    	withSonarQubeEnv('Sonarqube') {
+	   sh 'mvn sonar:sonar'
+	}
+    }
     
     stage('Build Management') {
 		def uploadSpec = """{ 

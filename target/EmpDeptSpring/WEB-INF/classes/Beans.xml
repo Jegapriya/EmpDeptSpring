@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+http://www.springframework.org/schema/context  
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"> </property>
+		<!--<property name="url" value="jdbc:mysql://cqfqdcirp94y.us-east-2.rds.amazonaws.com:3306/aar76cwoxolw4q"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="jegapriya7"></property>-->
+		<property name="url" value="jdbc:mysql://jegapriya.eastus.cloudapp.azure.com:3306/spring"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+	
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="annotatedClasses">
+		<list>
+			<value>com.mindtree.entity.Login</value>
+			<value>com.mindtree.entity.Project</value>
+			<value>com.mindtree.entity.Employee</value>
+		</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="template" class="org.springframework.orm.hibernate4.HibernateTemplate">
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+	
+	<bean id="objLoginDao" class="com.mindtree.dao.impl.LoginDaoImpl" scope="prototype">
+		<property name="template">
+		<ref bean="template"/></property>
+	</bean>
+	
+	<bean id="objLoginService" class="com.mindtree.service.impl.LoginServiceImpl" scope="prototype">
+	</bean>
+	
+	<bean id="loginObj" class="com.mindtree.entity.Login" scope="prototype">
+	</bean>
+	
+	<bean id="objEmployee" class="com.mindtree.entity.Employee" scope="prototype">
+	</bean>
+	
+	<bean id="objEmployeeService" class="com.mindtree.service.impl.EmployeeServiceImpl" scope="prototype">
+	</bean>
+	
+	<bean id="objEmployeeDao" class="com.mindtree.dao.impl.EmployeeDaoImpl" scope="prototype">
+		<property name="template">
+		<ref bean="template"/></property>
+	</bean>
+	
+	<bean id="objProject" class="com.mindtree.entity.Project" scope="prototype">
+	</bean>
+	
+	<bean id="objProjectService" class="com.mindtree.service.impl.ProjectServiceImpl" scope="prototype">
+	</bean>
+	
+	<bean id="objProjectDao" class="com.mindtree.dao.impl.ProjectDaoImpl" scope="prototype">
+		<property name="template">
+		<ref bean="template"/></property>
+	</bean>
+</beans>
