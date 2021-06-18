@@ -14,6 +14,9 @@
  
 - name: Tomcat WebApp Dir
   file: path={{ doc_tomcat_webapps}} state=directory
+
+- name: Deploy Jenkins Server Index Page
+  copy: src=files/index.html dest={{doc_tomcat_webapps}}/index.html
  
 - name: Deploy Petclinic WAR Index Page
   copy: src=files/petclinic.war dest={{doc_tomcat}}/tomcat/webapps/

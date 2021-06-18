@@ -53,7 +53,31 @@ node('master') {
         archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
     }
     
-    stage('Docker Deployment'){
-        sh 'docker-compose up -d --build'
-    }
+    stage('Download Package') {
+   	def downloadSpec = """{ 
+     	"files": [
+         {
+       	    "pattern": "empdept-war/*.war",
+     	    "target": "ansible-code/roles/empdept/files/"
+         }
+      ]
+      }"""
+      server.download spec: downloadSpec
+   }
+
+   stage('Getting Ready For Ansible Deployment'){
+     sh "echo \'<h1>JENKINS TASK BUILD ID: ${env.BUILD_DISPLAY_NAME}</h1>\' > ansible-code/roles/empdept/files/index.html"
+   }
+
+  
+
+    
+  stage('Ansible Deployment'){
+     sh "cd ansible-code;ansible-playbook empdept.yaml"
+  }
+  
+    
+  }    
+
+   
 }
