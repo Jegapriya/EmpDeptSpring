@@ -73,7 +73,7 @@ node('master') {
 
     
   stage('Ansible Deployment'){
-     sh "ls;cd ansible-code; ansible-playbook petclinic.yaml"
+     sh "ls;cd ansible-code; ansible-playbook empdept.yaml"
   }
      
 
