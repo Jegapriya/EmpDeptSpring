@@ -75,9 +75,7 @@ node('master') {
   stage('Ansible Deployment'){
      sh "cd ansible-code;ansible-playbook empdept.yaml"
   }
-  
-    
-  }    
+     
 
    
 }
