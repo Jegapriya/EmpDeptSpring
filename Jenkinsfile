@@ -5,7 +5,7 @@ node('master') {
     def buildInfo = Artifactory.newBuildInfo()
 
     stage('Checkout From Git'){
-        git branch: 'Jenkins', git 'https://github.com/Jegapriya/EmpDeptSpring.git'
+        git branch: 'Jenkins', url: 'https://github.com/Jegapriya/EmpDeptSpring.git'
     }
     
     stage('clean') {
