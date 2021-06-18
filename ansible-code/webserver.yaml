@@ -1,7 +1,0 @@
----
-
-- hosts: ansible
-  name: "My Roles Web Server Deployment"
-  become: yes 
-  roles: 
-    - webserver
