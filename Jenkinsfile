@@ -65,17 +65,21 @@ node('master') {
       server.download spec: downloadSpec
    }
 
-   stage('Getting Ready For Ansible Deployment'){
+   /*stage('Getting Ready For Ansible Deployment'){
      sh "echo \'<h1>JENKINS TASK BUILD ID: ${env.BUILD_DISPLAY_NAME}</h1>\' > ansible-code/roles/empdept/files/index.html"
    }
 
-  
-
-    
-  stage('Ansible Deployment'){
-     sh "ls;cd ansible-code; ansible-playbook empdept.yaml"
-  }
      
-
+   stage('Ansible Deployment'){
+     sh "ls;cd ansible-code; ansible-playbook empdept.yaml"
+   }*/
+     
+   def project_terra="terraform-code/"
+   dir(project_terra) {
+   stage('Prod Deployment on AWS'){
+      sh label: 'terraform', script: '/bin/terraform init'
+      sh label: 'terraform', script: '/bin/terraform apply -input=false -auto-approve'
+   }
+}
    
 }
