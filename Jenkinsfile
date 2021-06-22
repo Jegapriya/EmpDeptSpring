@@ -59,7 +59,6 @@ node('master') {
          {
        	    "pattern": "empdept-war/*.war",
 	    "target": "terraform-code/roles/empdept/files/"
-     	    /*"target": "ansible-code/roles/empdept/files/"*/
          }
       ]
       }"""
