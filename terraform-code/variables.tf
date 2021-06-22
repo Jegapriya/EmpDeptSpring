@@ -1,5 +1,5 @@
 variable "key_name" {
-  default = "terraform-demo-301"
+  default = "awsinstancepem"
 }
 
 variable "pvt_key_name" {
