@@ -65,12 +65,12 @@ node('master') {
       server.download spec: downloadSpec
    }
 
-   /*stage('Getting Ready For Ansible Deployment'){
+   stage('Getting Ready For Ansible Deployment'){
      sh "echo \'<h1>JENKINS TASK BUILD ID: ${env.BUILD_DISPLAY_NAME}</h1>\' > ansible-code/roles/empdept/files/index.html"
    }
 
      
-   stage('Ansible Deployment'){
+   /*stage('Ansible Deployment'){
      sh "ls;cd ansible-code; ansible-playbook empdept.yaml"
    }*/
      
