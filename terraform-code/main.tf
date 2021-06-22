@@ -36,7 +36,7 @@ resource "null_resource" "ansible-main" {
        echo "[jenkins-ci]"|tee -a jenkins-ci.ini;
        export ANSIBLE_HOST_KEY_CHECKING=False;
        echo "${aws_instance.backend.public_ip}"|tee -a jenkins-ci.ini;
-       ansible-playbook --key-file=${var.pvt_key_name} -i jenkins-ci.ini -u ubuntu ../ansible-code/empdept.yaml -v 
+       ansible-playbook --key-file=${var.pvt_key_name} -i jenkins-ci.ini -u ubuntu ../ansible-code/empdept.yaml -vvv 
      EOT
   }
   depends_on = [aws_instance.backend]
