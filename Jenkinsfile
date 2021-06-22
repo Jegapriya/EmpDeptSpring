@@ -77,8 +77,8 @@ node('master') {
    def project_terra="terraform-code/"
    dir(project_terra) {
    stage('Prod Deployment on AWS'){
-      sh label: 'terraform', script: '/bin/terraform init'
-      sh label: 'terraform', script: '/bin/terraform apply -input=false -auto-approve'
+      sh label: 'terraform', script: 'terraform init'
+      sh label: 'terraform', script: 'terraform apply -input=false -auto-approve'
    }
 }
    
