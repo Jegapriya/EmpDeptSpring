@@ -1,6 +1,6 @@
 ---
 
-- hosts: ansible
+- hosts: all
   name: "My EmpDept Application Deployment"
   become: yes 
   roles: 
