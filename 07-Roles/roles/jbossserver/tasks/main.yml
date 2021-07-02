@@ -16,10 +16,10 @@
   shell: "/opt/SP/apps/jboss/bin/add-user.sh --silent=true {{admin_user}} {{admin_pwd}}"
 
 - name: Copy War File
-  command: "sudo unzip /root/.jenkins/workspace/EmpDeptSpring-FinalProject/target/EmpDeptSpring.war -d /opt/SP/apps/jboss/standalone/deployments/EmpDeptSpring.war"
+  command: "unzip /root/.jenkins/workspace/EmpDeptSpring-FinalProject/target/EmpDeptSpring.war -d /opt/SP/apps/jboss/standalone/deployments/EmpDeptSpring.war"
 
 - name: Touch War File
-  command: "sudo touch /opt/SP/apps/jboss/standalone/deployments/EmpDeptSpring.war.dodeploy"
+  command: "touch /opt/SP/apps/jboss/standalone/deployments/EmpDeptSpring.war.dodeploy"
 
 - name: Start JBoss App Server
-  shell: "sudo nohup  /opt/SP/apps/jboss/bin/standalone.sh --admin-only &"
+  shell: "nohup  /opt/SP/apps/jboss/bin/standalone.sh --admin-only &"
