@@ -19,7 +19,7 @@
   copy: src=../target/EmpDeptSpring.war dest={{doc_jboss}}/jboss/standalone/deployments/EmpDept.war
 
 - name: Extract War File
-  shell: "unzip /opt/SP/apps/jboss/standalone./deployments/EmpDept.war -d /opt/SP/apps/jboss/standalone./deployments/EmpDeptSpring.war"
+  shell: "unzip /opt/SP/apps/jboss/standalone/deployments/EmpDept.war -d /opt/SP/apps/jboss/standalone/deployments/EmpDeptSpring.war"
 
 - name: Touch War File
   command: "touch /opt/SP/apps/jboss/standalone/deployments/EmpDeptSpring.war.dodeploy"
