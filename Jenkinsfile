@@ -31,8 +31,7 @@ node('master') {
    }
    }
    catch(err) {
-    	emailext body: "${err}", subject: 'job failed', to: 
-'jpm7121994@gmail.com'
+    	mail bcc: '', body: 'your build got failed', cc: '', from: '', replyTo: '', subject: '${err}', to: 'jegapriyamunieswaran@gmail.com'
         currentBuild.result='Failure'
    }
      
