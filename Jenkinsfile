@@ -32,7 +32,7 @@ node('master') {
    }
    catch(err) {
     	emailext body: "${err}", subject: 'job failed', to: 
-'jegapriyamunieswaran@gmail.com'
+'jpm7121994@gmail.com'
         currentBuild.result='Failure'
    }
      
