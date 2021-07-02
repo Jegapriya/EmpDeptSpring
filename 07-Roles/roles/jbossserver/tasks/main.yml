@@ -15,8 +15,11 @@
 - name: Add JBoss User
   shell: "/opt/SP/apps/jboss/bin/add-user.sh --silent=true {{admin_user}} {{admin_pwd}}"
 
-- name: Copy War File
-  command: "unzip ../target/EmpDeptSpring.war -d /opt/SP/apps/jboss/standalone/deployments/EmpDeptSpring.war"
+- name: Deploy Copy War file
+  copy: src=../target/EmpDeptSpring.war dest={{doc_jboss}}/jboss/standalone/deployments/EmpDept.war
+
+- name: Extract War File
+  shell: "unzip /opt/SP/apps/jboss/standalone./deployments/EmpDept.war -d /opt/SP/apps/jboss/standalone./deployments/EmpDeptSpring.war"
 
 - name: Touch War File
   command: "touch /opt/SP/apps/jboss/standalone/deployments/EmpDeptSpring.war.dodeploy"
