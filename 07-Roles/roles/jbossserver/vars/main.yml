@@ -1,0 +1,6 @@
+---
+# vars file for jbossserver
+doc_jboss: "/opt/SP/apps"
+download_url: "https://download.jboss.org/wildfly/24.0.0.Final/wildfly-24.0.0.Final.tar.gz"
+admin_user: "Admin"
+admin_pwd: "admin"

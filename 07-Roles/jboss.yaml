@@ -1,0 +1,33 @@
+---
+
+- hosts: ansible
+  name: "My JBoss Server Deployment"
+  become: yes 
+  vars:
+    doc_jboss: "/opt/SP/apps"
+    download_url: "https://download.jboss.org/wildfly/24.0.0.Final/wildfly-24.0.0.Final.zip"
+    admin_user: "Admin" 
+    admin_pwd: "admin"
+
+  tasks:
+  - name: JBoss Home Dir
+    file: path={{doc_jboss}}/jboss state=directory
+
+  - name: Install Default JDK 1.8 
+    apt: name=default-jdk state=present
+
+  - name: Download JBoss Zip
+    get_url: url={{download_url}} dest={{doc_jboss}}/wildfly-24.0.0.Final.zip mode=0755
+
+  - name: Extract JBoss Zip
+    command: "unzip {{doc_JBoss}}/wildfly-24.0.0.Final.zip -C {{doc_jboss}}/jboss --strip-components 1"
+
+  - name: Add JBoss User
+    shell: "/opt/SP/apps/jboss/bin/add-user.sh --silent=true {{admin_user}} {{admin_pwd}}"
+
+  - name: Copy War File
+    copy: src=files/petclinic.war dest={{doc_jboss}}/jboss/bin/standalone/deployments/
+
+  - name: Start JBoss App Server
+    shell: "nohup  /opt/SP/apps/jboss/bin/standalone.sh --admin-only"
+

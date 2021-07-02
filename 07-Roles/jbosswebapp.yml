@@ -1,0 +1,7 @@
+---
+
+- hosts: ansible
+  name: "My Roles JBoss Server Deployment"
+  become: yes 
+  roles: 
+    - jbossserver

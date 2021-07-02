@@ -1,0 +1,25 @@
+---
+# tasks file for jbossserver
+- name: JBoss Home Dir
+  file: path={{doc_jboss}}/jboss state=directory
+
+- name: Install Default JDK 1.8
+  apt: name=default-jdk state=present
+
+- name: Download JBoss Tar
+  get_url: url={{download_url}} dest={{doc_jboss}}/jboss.tar.gz mode=0755
+
+- name: Extract JBoss Tar
+  command: "tar zxf {{doc_jboss}}/jboss.tar.gz -C {{doc_jboss}}/jboss --strip-components 1"
+
+- name: Add JBoss User
+  shell: "/opt/SP/apps/jboss/bin/add-user.sh --silent=true {{admin_user}} {{admin_pwd}}"
+
+- name: Copy War File
+  command: "sudo unzip /root/.jenkins/workspace/EmpDeptSpring-FinalProject/target/EmpDeptSpring.war -d /opt/SP/apps/jboss/standalone/deployments/EmpDeptSpring.war"
+
+- name: Touch War File
+  command: "sudo touch /opt/SP/apps/jboss/standalone/deployments/EmpDeptSpring.war.dodeploy"
+
+- name: Start JBoss App Server
+  shell: "sudo nohup  /opt/SP/apps/jboss/bin/standalone.sh --admin-only &"
