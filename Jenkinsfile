@@ -1,5 +1,6 @@
 node('master') {
-    
+
+  try {    
 
     stage('Checkout From Git'){
         git branch: 'Jenkins', url: 'https://github.com/Jegapriya/EmpDeptSpring.git'
@@ -27,6 +28,12 @@ node('master') {
      
    stage('Ansible Deployment'){
      sh "cp -rf target/*.war 07-Roles/files/ ;ls;cd 07-Roles; ansible-playbook jbosswebapp.yml"
+   }
+   }
+   catch(err) {
+    	emailext body: "${err}", subject: 'job failed', to: 
+'jegapriyamunieswaran@gmail.com'
+        currentBuild.result='Failure'
    }
      
 }
