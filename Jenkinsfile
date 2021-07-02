@@ -31,7 +31,7 @@ node('master') {
    }
    }
    catch(err) {
-    	mail bcc: '', body: 'your build got failed', cc: '', from: '', replyTo: '', subject: '${err}', to: 'jegapriyamunieswaran@gmail.com'
+    	mail bcc: '', body: "your build got failed ${err}", cc: '', from: '', replyTo: '', subject: "${err}", to: 'jegapriyamunieswaran@gmail.com'
         currentBuild.result='Failure'
    }
      

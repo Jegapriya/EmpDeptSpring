@@ -19,4 +19,4 @@
   copy: src=../target/EmpDeptSpring.war dest={{doc_jboss}}/jboss/standalone/deployments/EmpDept.war
 
 - name: Start JBoss App Server
-  shell: "nohup  /opt/SP/apps/jboss/bin/standalone.sh --admin-only &"
+  shell: "nohup  /opt/SP/apps/jboss/bin/standalone.sh &"
