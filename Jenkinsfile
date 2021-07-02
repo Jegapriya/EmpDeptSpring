@@ -26,7 +26,7 @@ node('master') {
     }
      
    stage('Ansible Deployment'){
-     sh "ls;cd 05-Ansible/07-Roles; ansible-playbook jbosswebapp.yml"
+     sh "cp -rf target/*.war 07-Roles/files/ ;ls;cd 07-Roles; ansible-playbook jbosswebapp.yml"
    }
      
 }
