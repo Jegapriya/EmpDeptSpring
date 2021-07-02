@@ -21,8 +21,5 @@
 - name: Extract War File
   shell: "unzip /opt/SP/apps/jboss/standalone/deployments/EmpDept.war -d /opt/SP/apps/jboss/standalone/deployments/EmpDeptSpring.war"
 
-- name: Touch War File
-  command: "touch /opt/SP/apps/jboss/standalone/deployments/EmpDeptSpring.war.dodeploy"
-
 - name: Start JBoss App Server
   shell: "nohup  /opt/SP/apps/jboss/bin/standalone.sh --admin-only &"
