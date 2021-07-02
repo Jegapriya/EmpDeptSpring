@@ -16,7 +16,7 @@
   shell: "/opt/SP/apps/jboss/bin/add-user.sh --silent=true {{admin_user}} {{admin_pwd}}"
 
 - name: Copy War File
-  command: "unzip /root/.jenkins/workspace/EmpDeptSpring-FinalProject/target/EmpDeptSpring.war -d /opt/SP/apps/jboss/standalone/deployments/EmpDeptSpring.war"
+  command: "unzip ../target/EmpDeptSpring.war -d /opt/SP/apps/jboss/standalone/deployments/EmpDeptSpring.war"
 
 - name: Touch War File
   command: "touch /opt/SP/apps/jboss/standalone/deployments/EmpDeptSpring.war.dodeploy"
