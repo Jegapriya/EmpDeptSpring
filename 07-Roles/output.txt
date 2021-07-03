@@ -35,3 +35,4 @@ webroot: $user.home/.jenkins
 2021-07-03 04:39:48.816+0000 [id=137]	INFO	o.j.p.workflow.job.WorkflowRun#finish: EmpDeptSpring-FinalProject #22 completed: ABORTED
 2021-07-03 04:41:42.488+0000 [id=166]	INFO	o.j.p.workflow.job.WorkflowRun#finish: EmpDeptSpring-FinalProject #23 completed: FAILURE
 2021-07-03 04:47:15.780+0000 [id=330]	INFO	o.j.p.workflow.job.WorkflowRun#finish: EmpDeptSpring-FinalProject #24 completed: FAILURE
+2021-07-03 04:52:56.935+0000 [id=364]	INFO	o.j.p.workflow.job.WorkflowRun#finish: EmpDeptSpring-FinalProject #25 completed: FAILURE
