@@ -36,3 +36,6 @@ webroot: $user.home/.jenkins
 2021-07-03 04:41:42.488+0000 [id=166]	INFO	o.j.p.workflow.job.WorkflowRun#finish: EmpDeptSpring-FinalProject #23 completed: FAILURE
 2021-07-03 04:47:15.780+0000 [id=330]	INFO	o.j.p.workflow.job.WorkflowRun#finish: EmpDeptSpring-FinalProject #24 completed: FAILURE
 2021-07-03 04:52:56.935+0000 [id=364]	INFO	o.j.p.workflow.job.WorkflowRun#finish: EmpDeptSpring-FinalProject #25 completed: FAILURE
+2021-07-03 05:00:51.451+0000 [id=562]	INFO	o.j.p.workflow.job.WorkflowRun#finish: EmpDeptSpring-FinalProject #26 completed: ABORTED
+2021-07-03 05:01:53.373+0000 [id=564]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$0: Started Periodic background build discarder
+2021-07-03 05:01:53.375+0000 [id=564]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$0: Finished Periodic background build discarder. 1 ms
