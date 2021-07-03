@@ -15,12 +15,16 @@
 - name: Add JBoss User
   shell: "/opt/SP/apps/jboss/bin/add-user.sh --silent=true {{admin_user}} {{admin_pwd}}"
 
-- name: Deploy Copy War file
+- name: Copy War file
   copy: src=../target/EmpDeptSpring.war dest={{doc_jboss}}/jboss/standalone/tmp/EmpDeptSpring.war
 
 - name: Start JBoss App Server
   shell: "nohup  /opt/SP/apps/jboss/bin/standalone.sh &"
 
-- name: Deploy War File
-  shell: "{{doc_jboss}}/jboss/bin/jboss-cli.sh -u={{admin_user}} -p={{admin_pwd}} --controller=http://localhost:9990 --connect --command='deploy {{doc_jboss}}/jboss/standalone/tmp/EmpDeptSpring.war --force'"
+- name: Deploy Emp Dept Spring to JBoss
+  jboss:
+    deploy_path: /opt/SP/apps/jboss/standalone/deployments/
+    src: /opt/SP/apps/jboss/standalone/tmp/EmpDeptSpring.war
+    deployment: EmpDeptSpring.war
+    state: present
 
