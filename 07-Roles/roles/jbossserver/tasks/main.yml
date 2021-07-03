@@ -22,4 +22,4 @@
   shell: "nohup  /opt/SP/apps/jboss/bin/standalone.sh &"
 
 - name: Deploy War File
-  shell: "{{doc_jboss}}/jboss/bin/jboss-cli.sh -u={{admin_user}} -p={{admin_pwd}} --controller=127.0.0.1:9990 --connect --command='deploy {{doc_jboss}}/jboss/standalone/tmp/EmpDeptSpring.war --force'"
+  shell: "{{doc_jboss}}/jboss/bin/jboss-cli.sh -u={{admin_user}} -p={{admin_pwd}}  --connect --command='deploy {{doc_jboss}}/jboss/standalone/tmp/EmpDeptSpring.war --force'"
