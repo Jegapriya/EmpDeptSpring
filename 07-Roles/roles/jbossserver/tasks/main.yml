@@ -21,10 +21,5 @@
 - name: Start JBoss App Server
   shell: "nohup  /opt/SP/apps/jboss/bin/standalone.sh &"
 
-- name: Deploy Emp Dept Spring to JBoss
-  jboss:
-    deploy_path: /opt/SP/apps/jboss/standalone/deployments/
-    src: /opt/SP/apps/jboss/standalone/tmp/EmpDeptSpring.war
-    deployment: EmpDeptSpring.war
-    state: present
-
+- name: Deploy War File
+  shell: "{{doc_jboss}}/jboss/bin/jboss-cli.sh -u={{admin_user}} -p={{admin_pwd}} --controller=127.0.0.1:9990 --connect --command='deploy {{doc_jboss}}/jboss/standalone/tmp/EmpDeptSpring.war --force'"

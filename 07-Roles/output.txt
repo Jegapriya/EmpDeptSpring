@@ -32,3 +32,12 @@ webroot: $user.home/.jenkins
 2021-07-03 06:20:45.900+0000 [id=27]	INFO	o.s.b.f.s.DefaultListableBeanFactory#preInstantiateSingletons: Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1a79f1d6: defining beans [filter,legacy]; root of factory hierarchy
 2021-07-03 06:20:45.966+0000 [id=28]	INFO	jenkins.InitReactorRunner$1#onAttained: Completed initialization
 2021-07-03 06:20:46.002+0000 [id=19]	INFO	hudson.WebAppMain$3#run: Jenkins is fully up and running
+2021-07-03 06:30:04.578+0000 [id=93]	INFO	o.j.p.workflow.job.WorkflowRun#finish: EmpDeptSpring-FinalProject #30 completed: FAILURE
+2021-07-03 06:34:37.906+0000 [id=199]	INFO	o.j.p.workflow.job.WorkflowRun#finish: EmpDeptSpring-FinalProject #31 completed: FAILURE
+2021-07-03 06:37:21.272+0000 [id=363]	INFO	o.j.p.workflow.job.WorkflowRun#finish: EmpDeptSpring-FinalProject #32 completed: FAILURE
+2021-07-03 06:46:51.531+0000 [id=403]	INFO	o.j.p.workflow.job.WorkflowRun#finish: NewEmpDept-Project #1 completed: FAILURE
+2021-07-03 06:50:53.015+0000 [id=500]	INFO	o.j.p.workflow.job.WorkflowRun#finish: NewEmpDept-Project #2 completed: FAILURE
+2021-07-03 06:59:26.854+0000 [id=696]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$0: Started Periodic background build discarder
+2021-07-03 06:59:26.855+0000 [id=696]	INFO	hudson.model.AsyncPeriodicWork#lambda$doRun$0: Finished Periodic background build discarder. 1 ms
+2021-07-03 07:03:58.212+0000 [id=726]	INFO	o.j.p.workflow.job.WorkflowRun#finish: NewEmpDept-Project #3 completed: ABORTED
+2021-07-03 07:14:48.743+0000 [id=864]	INFO	o.j.p.workflow.job.WorkflowRun#finish: NewEmpDept-Project #4 completed: ABORTED
